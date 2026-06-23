@@ -34,3 +34,62 @@ project/
 ├── app.py                    # Gradio Web Interface
 ├── run_demo.py               # Command-line testing script
 └── requirements.txt          # Package requirements
+```
+
+---
+
+## ⚙️ Installation & Usage
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/focusflow-ai.git
+cd focusflow-ai
+```
+
+### 2. Install dependencies
+```bash
+pip install -r project/requirements.txt
+```
+
+### 3. Run Command-Line Demo
+Verify the agent flow quickly via the terminal:
+```bash
+python project/run_demo.py
+```
+
+### 4. Run Interactive Web UI
+Launch the interactive chat interface:
+```bash
+python project/app.py
+```
+
+---
+
+## 🔄 Multi-Agent Workflow
+```mermaid
+sequenceDiagram
+    actor Student
+    participant Main as Main Agent
+    participant P as Planner
+    participant W as Worker
+    participant E as Evaluator
+    
+    Student->>Main: Define Learning Goal
+    Main->>P: Generate Syllabus
+    P-->>Main: Return Syllabus JSON
+    Main->>W: Fetch Module Content
+    W-->>Main: Return Guide & Quiz
+    Main-->>Student: Display Material & Quiz
+    
+    Student->>Main: Submit Answers
+    Main->>E: Evaluate Answer
+    E-->>Main: Return Grade (Pass/Review)
+    Main-->>Student: Return Feedback & Next Step
+```
+
+---
+
+## 📄 License
+This project is open-source and licensed under the MIT License.
+
+
